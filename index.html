@@ -1058,7 +1058,7 @@
     <div class="section-header">
       <div class="section-number">Section 01</div>
       <h2>The Strategy</h2>
-      <div class="section-lead">A $20.9 billion market is being created right now — the first wave of AI agents that shop, advise, and transact on behalf of customers. No specialty garden retailer has an MCP endpoint. Armstrong has everything but one layer.</div>
+      <div class="section-lead">Information is no longer the competitive moat — it is everywhere, instantly, for everyone. What matters now is what you do with it: how you consolidate it, connect it to operations, and put it in front of customers at the moment it is useful. Armstrong has 136 years of expertise and 31 stores of transaction history. The only missing piece is the layer that connects it to the channel where customers are already asking.</div>
     </div>
 
     <div class="stat-grid">
@@ -1082,7 +1082,7 @@
 
     <div class="callout gold-callout">
       <div class="callout-label">The Moment</div>
-      <p>Walmart's Sparky MCP agent is live. Gartner projects <strong>75% of gateway vendors will have MCP features by end of 2026</strong>. The agent commerce layer is being built right now, retailer by retailer. The question is not whether Armstrong needs this — it is whether Armstrong leads or follows.</p>
+      <p>Walmart, Target, and the major gateway platforms are building the infrastructure now. The retailers that connect their operations to it first are not doing something experimental — they are meeting customers where they already are. Armstrong's advantage is not that it can publish an API. It is that it has something worth connecting: 136 years of expertise that no big-box competitor can replicate, already organized and ready to surface.</p>
     </div>
 
     <h3 class="subsection">The Armstrong Opportunity</h3>
@@ -1145,8 +1145,8 @@
       </div>
       <div class="playbook-card p3">
         <div class="playbook-num">Playbook 03</div>
-        <h3>MCP Architecture + Canary Platform</h3>
-        <p>The RapidPOS MCP Server (Layer 4) plus the Canary Lawn &amp; Garden OS (CRDM + TSP) that powers it. CATz Phase 2 is the delivery framework — Select, contract, and implement the platform. Phase 2 ends with a signed vendor agreement, funded implementation plan, and the CRDM build underway across all Armstrong locations.</p>
+        <h3>The Sysrepublic Delivery Model</h3>
+        <p>Two-phase platform delivery: Phase 1 gets the data right — CRDM live, NCR Counterpoint stream connected, all 31 stores flowing into one canonical data warehouse. Phase 2 configures the applications against real Armstrong transaction history. The foundation first, then the intelligence on top of it.</p>
       </div>
     </div>
 
@@ -1176,15 +1176,15 @@
 
     <div class="callout">
       <div class="callout-label">What This Normally Costs</div>
-      <p>A PwC or Bain SISP engagement at the depth delivered here — four phases, primary and secondary research, competitive mapping, positioning strategy, and execution roadmap — was billed at <strong>$150,000–$250,000</strong> in 1997 dollars. That's what the methodology is worth. GrowDirect delivers it as the front door to an implementation partnership, not a standalone invoice.</p>
+      <p>A diagnostic engagement at this depth — four phases, primary and secondary research, competitive mapping, positioning strategy, and a live working prototype — would be scoped at <strong>$150,000–$250,000</strong> as a standalone project. GrowDirect delivers it as the front door to an implementation partnership, not a standalone invoice.</p>
     </div>
 
     <h3 class="subsection">Playbook 02 in Detail — The VSM Feature Architecture</h3>
     <p>Six features designed as a system. Each one is independently valuable; together they create the persistent garden relationship that no competitor can replicate.</p>
 
-    <h3 class="subsection">Playbook 03 in Detail — MCP Architecture + CATz Phase 2 Platform Deployment</h3>
-    <p>The SAP IS Retail POS Interface specification (PwC COE, 1999) defines the IDoc message architecture that is the direct ancestor of the MCP tool schemas in Layer 4. The technical pattern — outbound pricing/promotions/customer data, inbound sales receipts/payment reconciliation — has been proven at scale across hundreds of retail deployments. GrowDirect translates it for the MCP era. That is the RapidPOS MCP Server: the IDoc architecture reimplemented as JSON-RPC 2.0 over HTTPS, with SSE for streaming, and Anthropic's MCP protocol as the agent communication layer.</p>
-    <p>But the MCP Server alone is not the prize. The prize is the CRDM underneath it. This is CATz Phase 2: after the Phase 1 diagnostic confirms the opportunity, the Phase 2 engagement selects and contracts the Canary Lawn &amp; Garden OS — the three-database PostgreSQL platform (<strong>canary_app / canary_sales / canary_metrics</strong>) that runs the 13-module spine across all 31 Armstrong stores. The CRDM lineage runs: IBM TDS (the enterprise data model used at Tesco and Asda) → Tesco SMART (the canonical transaction data warehouse used across 3,000 Tesco stores) → Canary CRDM (the SMB distillation, purpose-built for the NCR Counterpoint channel). The same retail data architecture that enterprise retailers spent hundreds of millions of dollars building — shrunk to fit a 31-store specialty garden chain and deployed in weeks rather than years.</p>
+    <h3 class="subsection">Playbook 03 in Detail — The Sysrepublic Two-Phase Delivery</h3>
+    <p><strong>Phase 1 — Get the data right.</strong> Stand up the Canary CRDM: the three-database PostgreSQL architecture (<strong>canary_app / canary_sales / canary_metrics</strong>) connected to the NCR Counterpoint transaction stream. Every sale, return, hold, and markdown from every Armstrong terminal flows into one canonical data warehouse in real time — not batch, not polled, streamed. This phase ends when the data is clean, current, and unified across all 31 stores. No application built on bad data delivers on its promise.</p>
+    <p><strong>Phase 2 — Configure the applications.</strong> With the CRDM live and the data clean, each of the 13 Canary modules is configured against real Armstrong transaction history: customer profiles, Sunset zone mappings, replenishment signals, loss prevention rules, seasonal demand curves. The RapidPOS MCP Server goes live on top — exposing the CRDM to every AI agent channel Armstrong operates. The applications are not installed cold. They are configured against years of actual Armstrong data, which means they are useful on day one rather than learning for six months.</p>
   </div>
 </div>
 
