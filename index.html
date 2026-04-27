@@ -877,14 +877,79 @@
   p { margin-bottom: 14px; color: var(--text-mid); font-size: 15px; }
   p:last-child { margin-bottom: 0; }
 
-  @media (max-width: 600px) {
-    .cover h1 { font-size: 32px; }
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .container { padding: 0 18px; }
+
+    .cover { padding: 52px 0 48px; }
+    .cover h1 { font-size: 30px; line-height: 1.15; }
+    .cover-sub { font-size: 16px; margin-bottom: 36px; }
+    .cover-meta { gap: 24px; }
+    .cover-meta-item strong { font-size: 12px; }
+    .pilot-badge { font-size: 12px; padding: 10px 14px; margin-top: 28px; }
+
+    .section { padding: 48px 0; }
     .section h2 { font-size: 26px; }
-    .toc-item { font-size: 10px; padding: 0 14px; }
-    .team-grid { grid-template-columns: 1fr; }
-    .pilot-section { padding: 36px 24px; }
-    .phase-steps { flex-direction: column; }
+    .section-lead { font-size: 15px; }
+    .section-header { margin-bottom: 32px; }
+
+    .toc { padding: 0; }
+    .toc-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .toc-inner::-webkit-scrollbar { display: none; }
+    .toc-item { font-size: 10px; padding: 16px 12px; letter-spacing: 1px; white-space: nowrap; }
+    .toc-number { display: none; }
+    .toc-vault-menu { display: none; }
+
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .stat-value { font-size: 26px; }
+    .stat-cell { padding: 20px 14px; }
+
+    .callout { padding: 18px 18px; }
+    .hero-callout { padding: 28px 22px; }
+    .hero-callout h3 { font-size: 20px; }
+    .hero-callout p { font-size: 14px; }
+
+    .playbook-grid { grid-template-columns: 1fr; }
+    .playbook-card { padding: 22px 18px; }
+
+    .phase-steps { flex-direction: column; gap: 16px; }
     .phase-steps::before { display: none; }
+    .phase-step { display: flex; align-items: center; gap: 16px; text-align: left; }
+    .phase-dot { margin: 0; flex-shrink: 0; }
+
+    .vsm-grid { grid-template-columns: 1fr; }
+
+    .stack-layer { flex-wrap: wrap; gap: 10px; }
+
+    .roadmap-phase { gap: 14px; }
+    .roadmap-phase-num { width: 36px; height: 36px; font-size: 14px; }
+
+    .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 12px; }
+    .smroi { grid-template-columns: 1fr; gap: 0; }
+
+    .pilot-section { padding: 32px 20px; }
+    .pilot-section h2 { font-size: 22px; }
+    .pilot-section p { font-size: 14px; }
+
+    .team-grid { grid-template-columns: 1fr; }
+    .bio-card { padding: 22px 18px; }
+    .bio-name { font-size: 17px; }
+
+    .play-card { padding: 24px 20px; }
+    .play-card h3 { font-size: 18px; }
+    .play-card p { font-size: 13px; }
+    .play-number { font-size: 52px; }
+
+    .mobile-vault-list { display: block !important; }
+  }
+
+  @media (max-width: 420px) {
+    .cover h1 { font-size: 24px; }
+    .cover-sub { font-size: 15px; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .cover-meta { flex-direction: column; gap: 14px; }
+    .toc-item { font-size: 9px; padding: 16px 9px; }
+    .section h2 { font-size: 22px; }
   }
 
   /* ── VAULT DROPDOWN ── */
@@ -952,6 +1017,14 @@
       ALX Virtual Horticulturist is live — full stack on a laptop, demonstrable today
     </div>
   </div>
+</div>
+
+<!-- ══ MOBILE VAULT STRIP ══ -->
+<div class="mobile-vault-list" style="display:none; background:#0f1c10; border-bottom:1px solid rgba(76,175,125,0.2); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; white-space:nowrap; padding:0 18px;">
+  <a href="https://proposal.growdirect.io" style="display:inline-block; padding:9px 14px 9px 0; font-size:11px; font-weight:700; letter-spacing:0.05em; color:#4CAF7D; text-decoration:none; border-right:1px solid rgba(255,255,255,0.1); margin-right:14px;">Proposal</a>
+  <a href="https://ncr.growdirect.io" target="_blank" style="display:inline-block; padding:9px 14px 9px 0; font-size:11px; font-weight:500; letter-spacing:0.05em; color:rgba(245,240,232,0.55); text-decoration:none; border-right:1px solid rgba(255,255,255,0.1); margin-right:14px;">NCR Vault</a>
+  <a href="https://growdirect-llc.github.io/canary-retail-brain/" target="_blank" style="display:inline-block; padding:9px 14px 9px 0; font-size:11px; font-weight:500; letter-spacing:0.05em; color:rgba(245,240,232,0.55); text-decoration:none; border-right:1px solid rgba(255,255,255,0.1); margin-right:14px;">Retail Brain</a>
+  <a href="https://growdirect-llc.github.io/catz/" target="_blank" style="display:inline-block; padding:9px 0; font-size:11px; font-weight:500; letter-spacing:0.05em; color:rgba(245,240,232,0.55); text-decoration:none;">CATz Method</a>
 </div>
 
 <!-- ══ NAV ══ -->
