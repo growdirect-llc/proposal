@@ -107,8 +107,8 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(102,57,186,0.25);
-    border: 1px solid var(--purple-light);
+    background: rgba(42,82,64,0.4);
+    border: 1px solid rgba(76,175,125,0.4);
     border-radius: 6px;
     padding: 12px 20px;
     margin-top: 40px;
@@ -225,7 +225,7 @@
     margin-bottom: 6px;
   }
   .stat-value.gold { color: var(--gold); }
-  .stat-value.purple { color: var(--purple); }
+  .stat-value.purple { color: var(--gold); }
   .stat-label {
     font-size: 11px;
     text-transform: uppercase;
@@ -244,7 +244,7 @@
     margin: 32px 0;
   }
   .callout.gold-callout { border-left-color: var(--gold); }
-  .callout.purple-callout { border-left-color: var(--purple); }
+  .callout.purple-callout { border-left-color: var(--gold); }
   .callout.red-callout { border-left-color: var(--red); }
   .callout-label {
     font-size: 10px;
@@ -318,7 +318,7 @@
   }
   .playbook-card.p1::before { background: var(--gold); }
   .playbook-card.p2::before { background: var(--green-light); }
-  .playbook-card.p3::before { background: var(--purple); }
+  .playbook-card.p3::before { background: var(--gold); }
   .playbook-num {
     font-size: 10px;
     letter-spacing: 2px;
@@ -384,7 +384,7 @@
     border: 3px solid var(--parchment);
   }
   .phase-dot.gold { background: var(--gold); }
-  .phase-dot.purple { background: var(--purple); }
+  .phase-dot.purple { background: var(--gold); }
   .phase-title {
     font-size: 12px;
     font-weight: 700;
@@ -469,8 +469,8 @@
     position: relative;
   }
   .stack-layer.layer-4 {
-    background: var(--purple);
-    border-color: var(--purple);
+    background: var(--green-dark);
+    border-color: var(--green-dark);
     color: #fff;
   }
   .layer-num {
@@ -553,7 +553,7 @@
     flex-shrink: 0;
     margin-top: 2px;
   }
-  .roadmap-phase-num.current { background: var(--purple); }
+  .roadmap-phase-num.current { background: var(--gold); }
   .roadmap-phase-body { flex: 1; }
   .roadmap-phase-header {
     display: flex;
@@ -664,19 +664,23 @@
   /* ── PLAYS ── */
   .play-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 16px;
     margin: 36px 0;
   }
   .play-card {
     border-radius: 10px;
-    padding: 30px 26px;
+    padding: 30px 32px;
     position: relative;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    align-items: start;
   }
   .play-card.anchor { background: var(--green-dark); color: var(--text-light); }
-  .play-card.smb { background: var(--parchment); border: 1px solid var(--border); }
-  .play-card.asset { background: var(--purple); color: var(--text-light); }
+  .play-card.smb { background: var(--green-mid); color: var(--text-light); }
+  .play-card.asset { background: var(--gold); color: var(--green-dark); }
   .play-label {
     font-size: 10px;
     letter-spacing: 2.5px;
@@ -684,31 +688,35 @@
     font-weight: 700;
     margin-bottom: 10px;
     opacity: 0.7;
+    grid-column: 1;
   }
   .play-card h3 {
     font-family: Georgia, serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 12px;
+    grid-column: 1;
   }
   .play-card.anchor h3 { color: #fff; }
-  .play-card.smb h3 { color: var(--green-dark); }
-  .play-card.asset h3 { color: #fff; }
+  .play-card.smb h3 { color: #fff; }
+  .play-card.asset h3 { color: var(--green-dark); }
   .play-card p {
-    font-size: 13.5px;
-    line-height: 1.6;
-    opacity: 0.85;
+    font-size: 14px;
+    line-height: 1.65;
+    opacity: 0.88;
+    grid-column: 1;
+    max-width: 680px;
   }
-  .play-card.smb p { color: var(--text-mid); opacity: 1; }
+  .play-card.asset p { color: var(--green-dark); }
   .play-number {
     font-family: Georgia, serif;
-    font-size: 52px;
+    font-size: 72px;
     font-weight: 700;
-    opacity: 0.12;
+    opacity: 0.1;
     position: absolute;
     bottom: 12px;
-    right: 18px;
+    right: 22px;
     line-height: 1;
   }
 
@@ -878,22 +886,52 @@
     .phase-steps { flex-direction: column; }
     .phase-steps::before { display: none; }
   }
+
+  /* ── VAULT DROPDOWN ── */
+  .toc-vault-menu {
+    position: relative;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .toc-vault-trigger {
+    cursor: pointer;
+    color: rgba(245,240,232,0.55) !important;
+    border-right: none !important;
+    padding-left: 24px;
+  }
+  .toc-vault-trigger:hover { color: var(--gold) !important; }
+  .toc-vault-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    background: #0f1c10;
+    border: 1px solid rgba(76,175,125,0.25);
+    border-radius: 6px;
+    min-width: 180px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    z-index: 200;
+    overflow: hidden;
+  }
+  .toc-vault-menu:hover .toc-vault-dropdown { display: block; }
+  .toc-vault-link {
+    display: block;
+    padding: 11px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: rgba(245,240,232,0.65);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.15s, color 0.15s;
+  }
+  .toc-vault-link:last-child { border-bottom: none; }
+  .toc-vault-link:hover { background: rgba(76,175,125,0.1); color: var(--green-light); text-decoration: none; }
+  .toc-vault-active { color: var(--green-light) !important; font-weight: 700 !important; }
+
 </style>
 </head>
 <body>
-
-<!-- ══ VAULT NAV ══ -->
-<nav style="background:#0f1c10;border-bottom:1px solid rgba(76,175,125,0.25);padding:0;position:sticky;top:0;z-index:999;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;">
-  <div style="max-width:860px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:42px;">
-    <span style="color:rgba(245,240,232,0.45);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;">GrowDirect Vaults</span>
-    <div style="display:flex;gap:24px;align-items:center;">
-      <a href="https://proposal.growdirect.io" style="color:#4CAF7D;font-size:12px;font-weight:600;letter-spacing:0.04em;text-decoration:none;opacity:1;">Proposal</a>
-      <a href="https://ncr.growdirect.io" style="color:rgba(245,240,232,0.65);font-size:12px;font-weight:500;letter-spacing:0.04em;text-decoration:none;" onmouseover="this.style.color='#4CAF7D'" onmouseout="this.style.color='rgba(245,240,232,0.65)'">NCR Vault</a>
-      <a href="https://growdirect-llc.github.io/canary-retail-brain/" style="color:rgba(245,240,232,0.65);font-size:12px;font-weight:500;letter-spacing:0.04em;text-decoration:none;" onmouseover="this.style.color='#4CAF7D'" onmouseout="this.style.color='rgba(245,240,232,0.65)'">Retail Brain</a>
-      <a href="https://growdirect-llc.github.io/catz/" style="color:rgba(245,240,232,0.65);font-size:12px;font-weight:500;letter-spacing:0.04em;text-decoration:none;" onmouseover="this.style.color='#4CAF7D'" onmouseout="this.style.color='rgba(245,240,232,0.65)'">CATz Method</a>
-    </div>
-  </div>
-</nav>
 
 <!-- ══ COVER ══ -->
 <div class="cover" id="top">
@@ -926,6 +964,15 @@
       <a href="#s4" class="toc-item"><span class="toc-number">04</span>The Plan</a>
       <a href="#s5" class="toc-item"><span class="toc-number">05</span>The Team</a>
       <a href="#s6" class="toc-item"><span class="toc-number">06</span>The Play</a>
+      <div class="toc-vault-menu">
+        <span class="toc-item toc-vault-trigger"><span class="toc-number">↗</span>Vaults ▾</span>
+        <div class="toc-vault-dropdown">
+          <a href="https://proposal.growdirect.io" class="toc-vault-link toc-vault-active">Armstrong Proposal</a>
+          <a href="https://ncr.growdirect.io" class="toc-vault-link" target="_blank">NCR Vault</a>
+          <a href="https://growdirect-llc.github.io/canary-retail-brain/" class="toc-vault-link" target="_blank">Retail Brain</a>
+          <a href="https://growdirect-llc.github.io/catz/" class="toc-vault-link" target="_blank">CATz Method</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1017,19 +1064,16 @@
         <div class="playbook-num">Playbook 01</div>
         <h3>Consumer Positioning</h3>
         <p>A structured three-phase engagement: Current State audit → Market and consumer research → Positioning strategy and execution roadmap. Applied to Armstrong across $50.2B market analysis, three customer segment profiles, SEO content strategy, and a positioning framework.</p>
-        <div class="playbook-origin">Derived from PwC Strategic Information Systems Planning (SISP) methodology. Applied at Ann Taylor, Saks Fifth Avenue, PETsMART, Kenneth Cole, Talbots, Muji, Sports Authority — and now Armstrong.</div>
       </div>
       <div class="playbook-card p2">
         <div class="playbook-num">Playbook 02</div>
         <h3>VSM Feature Design</h3>
         <p>Six purpose-built virtual store manager features designed from the ground up for the specialty garden retail context. Each feature is an MCP tool, a customer experience, and a data source that makes the system smarter over time.</p>
-        <div class="playbook-origin">Derived from the ERIS (Enterprise Retail Information System) domain model — Coopers & Lybrand, 1995. The retail business logic encoded in ERIS is the same logic running in ALX today, reimplemented for the MCP era.</div>
       </div>
       <div class="playbook-card p3">
         <div class="playbook-num">Playbook 03</div>
         <h3>MCP Architecture + Canary Platform</h3>
         <p>The RapidPOS MCP Server (Layer 4) plus the Canary Lawn &amp; Garden OS (CRDM + TSP) that powers it. CATz Phase 2 is the delivery framework — Select, contract, and implement the platform. Phase 2 ends with a signed vendor agreement, funded implementation plan, and the CRDM build underway across all Armstrong locations.</p>
-        <div class="playbook-origin">Architecture derived from SAP IS Retail POS Interface specification (PwC COE, 1999). CRDM lineage: IBM TDS → Tesco SMART → Canary. The data model has been enterprise-validated. What is new is the MCP protocol layer and the garden retail domain adaptation.</div>
       </div>
     </div>
 
@@ -1092,12 +1136,12 @@
     <p>Every other AI solution for retail starts with generic training data and tries to specialize later. ALX starts with the Vault. The Vault is a structured knowledge base built from Armstrong's 136 years of SoCal horticultural expertise: the Sunset zone matrix for Zones 21–24, the plant diagnostics library (86+ conditions mapped to symptom → diagnosis → treatment → product), the SoCal seasonal calendar (month-by-month, zone-specific), and the full species library with provenance and care notes.</p>
     <p>The Vault is what makes ALX "Armstrong" rather than generic. It is also, simultaneously, the SEO content engine that drives organic discovery across all 31 markets.</p>
 
-    <div style="background:var(--parchment-dark); border:1px solid var(--border); border-left:4px solid var(--purple); border-radius:6px; padding:22px 26px; margin:28px 0; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
+    <div style="background:var(--parchment-dark); border:1px solid var(--border); border-left:4px solid var(--gold); border-radius:6px; padding:22px 26px; margin:28px 0; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
       <div>
-        <div style="font-size:10px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--purple); margin-bottom:6px;">NCR Counterpoint Vault — Live</div>
+        <div style="font-size:10px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--gold); margin-bottom:6px;">NCR Counterpoint Vault — Live</div>
         <div style="font-size:14px; color:var(--text-mid); line-height:1.55;">The GrowDirect NCR Vault: reference architecture, API documentation, MCP tool schemas, and VAR channel resources for the RapidPOS MCP Server build.</div>
       </div>
-      <a href="http://ncr.growdirect.io" target="_blank" style="background:var(--purple); color:#fff; padding:10px 20px; border-radius:6px; font-size:13px; font-weight:700; white-space:nowrap; text-decoration:none;">ncr.growdirect.io →</a>
+      <a href="http://ncr.growdirect.io" target="_blank" style="background:var(--gold); color:var(--green-dark); padding:10px 20px; border-radius:6px; font-size:13px; font-weight:700; white-space:nowrap; text-decoration:none;">ncr.growdirect.io →</a>
     </div>
 
     <h3 class="subsection">Six VSM Features</h3>
@@ -1240,7 +1284,6 @@
         <div style="background:rgba(191,135,0,0.2); border:1px solid var(--gold); border-radius:6px; padding:10px 14px; font-size:12px; color:var(--gold-light); font-weight:700;">🌿 Armstrong Horticulture Vault — the domain knowledge layer for module R + T + Q + A</div>
         <div style="background:rgba(102,57,186,0.2); border:1px solid rgba(102,57,186,0.4); border-radius:6px; padding:10px 14px; font-size:12px; color:rgba(138,95,212,0.9); font-weight:700;">🤖 VSM / ALX — the persona layer on top of all 13 modules via Owl runtime</div>
       </div>
-      <div style="font-size:13px; color:rgba(245,240,232,0.45); font-style:italic;">Spine lineage: ERIS (Coopers &amp; Lybrand, 1995) → RBIS (IBM, 2005) → SAP IS Retail (PwC COE, 1999) → Canary Retail OS (2024). The same retail capability decomposition, rebuilt for the MCP era on a perpetual stock ledger with satoshi-precision cost accounting.</div>
     </div>
   </div>
 </div>
@@ -1266,7 +1309,7 @@
             <div class="roadmap-phase-when">Now → End 2026 — Running Today</div>
           </div>
           <div class="roadmap-phase-desc">RapidPOS MCP Server wraps the existing NCR Counterpoint REST API. ALX tools call live Counterpoint endpoints for inventory, pricing, customer, and loyalty. Redis cache delivers near-real-time response (1–5 sec). Worldpay payment integration for "put it on my account." The full Horticulture Vault is the knowledge layer. Six VSM features live. <strong>This is the conf room pilot — running right now on a laptop.</strong></div>
-          <div class="roadmap-bar" style="width:100%; background: var(--purple);"></div>
+          <div class="roadmap-bar" style="width:100%; background: var(--gold);"></div>
         </div>
       </div>
       <div class="roadmap-phase">
@@ -1420,12 +1463,11 @@
         <div class="bio-title">Founder — GrowDirect LLC</div>
         <div class="bio-tags">
           <span class="bio-tag">PricewaterhouseCoopers</span>
-          <span class="bio-tag">Coopers &amp; Lybrand</span>
           <span class="bio-tag">Retail IS Strategy</span>
           <span class="bio-tag">SAP IS Retail</span>
           <span class="bio-tag">MCP Architecture</span>
         </div>
-        <div class="bio-text">Former PricewaterhouseCoopers retail consultant who helped architect the SAP IS Retail implementation templates and SISP methodology deployed across Ann Taylor, Saks Fifth Avenue, PETsMART, Sports Authority, and others during the formative years of enterprise retail systems (1997–2002). Author of the retail SDD lineage that runs from Coopers &amp; Lybrand's ERIS framework through PwC's SISP playbooks, IBM's RBIS platform, and into Canary Retail OS — the MCP-native reimplementation of the same retail spine, built for 2026. Founder of GrowDirect LLC, the company building Layer 4.</div>
+        <div class="bio-text">Enterprise retail systems architect with implementations across Ann Taylor, Saks Fifth Avenue, PETsMART, Sports Authority, and others. Canary Retail OS is the MCP-native reimplementation of the same retail capability decomposition — rebuilt for 2026 on a perpetual stock ledger with modern infrastructure. Founder of GrowDirect LLC, the company building Layer 4.</div>
       </div>
 
       <div class="bio-card">
